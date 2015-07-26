@@ -1,0 +1,25 @@
+{
+  "name": "optimize-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimizemi/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/optimizemi/backend/issues"
+  },
+  "homepage": "https://github.com/optimizemi/backend#readme",
+  "dependencies": {
+    "koa": "^0.21.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
