@@ -9,9 +9,12 @@ optiMize Michigan Backend
 ```
 {
 	id: team_id,
-	name: "string",
-	members: [user_id_1, user_id_2, ...],
-	description: "Description about team"
+	year: team_year,
+	name: "Team_Name",
+	members: ["Member_1", "Member_2", ...],
+	short_desc: "Short description about team for team listing"
+	description: "Longer description about team for profile or similar",
+	photo: "Link to team photo"
 }
 ```
 
