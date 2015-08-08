@@ -1,0 +1,13 @@
+os: linux
+files:
+  - source: ./app.js 
+    destination: /home/ubuntu/backend
+  - source: package.json 
+    destination: /home/ubuntu/backend
+hooks:
+  BeforeInstall:
+    - location: /home/ubuntu/beforeInstall.sh 
+  AfterInstall:
+    - location: /home/ubuntu/afterInstall.sh
+  ApplicationStart:
+    - location: /home/ubuntu/appStart.sh 
