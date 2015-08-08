@@ -1,13 +1,21 @@
+version: 0.0
 os: linux
 files:
-  - source: ./app.js 
+  - source: app.js 
     destination: /home/ubuntu/backend
-  - source: package.json 
+  - source: package.json
     destination: /home/ubuntu/backend
 hooks:
   BeforeInstall:
-    - location: /home/ubuntu/beforeInstall.sh 
+    - location: deploy_scripts/beforeInstall.sh
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
-    - location: /home/ubuntu/afterInstall.sh
+    - location: deploy_scripts/afterInstall.sh
+      timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: /home/ubuntu/appStart.sh 
+    - location: deploy_scripts/appStart.sh
+      timeout: 300
+      runas: ubuntu
+
