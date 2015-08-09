@@ -3,19 +3,20 @@ optiMize Michigan Backend
 * This backend will be written in Koa, a framework very similar to Express
 * Its purpose is essentially to serve data from a MySQL database such as teams, etc.
 
-## Draft API spec
+## API spec
 ### Teams
-`GET /teams`
+`GET /api/teams`
 ```
 {
-	id: team_id,
-	year: team_year,
-	name: "Team_Name",
-	members: ["Member_1", "Member_2", ...],
-	short_desc: "Short description about team for team listing"
-	description: "Longer description about team for profile or similar",
-	photo: "Link to team photo"
+	id: 17,
+	year: 2015,
+	name: "My Team",
+	description: "Description about team for profile or similar",
+	logo: "Link to logo",
+	website: "Link to team website"
 }
+`GET /api/teams/year/2015` - Returns all teams matching the `year=2015` constraint
+`GET /api/teams/id/17` - Returns the team matching the `id=17` constraint
 ```
 
 ## For the future

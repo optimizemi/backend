@@ -1,9 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: app.js 
-    destination: /home/ubuntu/backend
-  - source: package.json
+  - source: / 
     destination: /home/ubuntu/backend
 hooks:
   ApplicationStop:
