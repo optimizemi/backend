@@ -7,6 +7,8 @@ optiMize Michigan Backend
 ### Teams
 `GET /api/teams`
 ```
+Content-Type: application/json
+
 {
 	id: 17,
 	year: 2015,
@@ -15,8 +17,19 @@ optiMize Michigan Backend
 	logo: "Link to logo",
 	website: "Link to team website"
 }
+```
 `GET /api/teams/year/2015` - Returns all teams matching the `year=2015` constraint
 `GET /api/teams/id/17` - Returns the team matching the `id=17` constraint
+
+### Newsletter
+`POST /api/newsletter`
+```
+Content-Type: application/json
+
+{
+	name: "My name",
+	email: "my@email.com"
+}
 ```
 
 ## For the future
