@@ -6,6 +6,9 @@ files:
   - source: package.json
     destination: /home/ubuntu/backend
 hooks:
+  ApplicationStop:
+    - location: deploy_scripts/appStop.sh
+      runas: ubuntu
   BeforeInstall:
     - location: deploy_scripts/beforeInstall.sh
       timeout: 300
