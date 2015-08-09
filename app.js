@@ -1,10 +1,13 @@
 var koa = require('koa');
 var bodyParser = require('koa-bodyparser');
 var request = require('koa-request');
+var pg = require('koa-pg');
 
 var app = koa();
 
 app.use(bodyParser());
+
+app.use(pg(process.env.OPTIMIZE_DB));
 
 app.use(function* (next) {
 	//
@@ -15,9 +18,8 @@ app.use(function* (next) {
 		return yield next;
 	}
 
-	this.body = [ {name: "Awaken", image: "https://www.optimizemichigan.org/imgs/mentor.jpg"},
-		      {name: "Adapt", image: "https://www.optimizemichigan.org/imgs/student_why_not_me.png"}
-		    ];
+	var result = yield this.pg.db.client.query_('SELECT * FROM teams;');
+	this.body = result.rows;
 });
 
 
