@@ -1,7 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: / 
+  - source: app.js 
+    destination: /home/ubuntu/backend
+  - source: teams.js
+    destination: /home/ubuntu/backend
+  - source: newsletter.js
+    destination: /home/ubuntu/backend
+  - source: package.json
     destination: /home/ubuntu/backend
 hooks:
   ApplicationStop:
