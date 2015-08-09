@@ -24,7 +24,7 @@ app.use(function* (next) {
 
 
 app.use(function* (next) {
-	if (this.path !== '/mailchimp') {
+	if (this.path !== '/newsletter') {
 		return yield next;
 	}
 
