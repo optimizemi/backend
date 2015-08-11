@@ -18,8 +18,8 @@ Content-Type: application/json
 	website: "Link to team website"
 }
 ```
-`GET /api/teams/year/2015` - Returns all teams matching the `year=2015` constraint
-`GET /api/teams/id/17` - Returns the team matching the `id=17` constraint
+* `GET /api/teams/year/2015` - Returns all teams matching the `year=2015` constraint
+* `GET /api/teams/id/17` - Returns the team matching the `id=17` constraint
 
 ### Newsletter
 `POST /api/newsletter`
