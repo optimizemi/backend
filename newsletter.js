@@ -23,18 +23,24 @@ var newsletter = function* (next) {
 	url: url,
 	body: data,
 	json: true
-    }
+    };
 
     var response = yield request.post(options);
     if (response.statusCode === 200) {
+	this.status = 201; // Created
 	this.body = {status: 'success',
 		     data: data};
     }
-    else {
-	this.status = response.statusCode;
+    else if (response.body.detail.indexOf('is already a list member') > -1) {
+	this.status = 409; // Conflict
 	this.body = {status: 'error',
-		     message: response.body.detail};
+		     message: 'Email exists'};
     }
-}
+    else {
+	this.status = 500;
+	this.body = {status: 'fail',
+		     message: 'Server error: ' + response.body.detail};
+    }
+};
 
 module.exports = newsletter;
