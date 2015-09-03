@@ -25,11 +25,13 @@ var newsletter = function* (next) {
 
         var response = yield request.post(options);
         if (response.statusCode === 200) {
-                this.body = 'Success';
+                this.body = {status: 'success',
+			    data: data};
         }
         else {
                 this.status = response.statusCode;
-                this.body = response.body.detail;
+                this.body = {status: 'error',
+			     message: response.body.detail};
         }	
 }
 
